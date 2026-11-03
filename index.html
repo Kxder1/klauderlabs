@@ -82,6 +82,12 @@ h1 .lab { color: var(--spark); }
 .arrow svg { width: 16px; height: 16px; transition: transform .3s; }
 .tile:hover .arrow { background: var(--spark); border-color: var(--spark); color: #fff; }
 .tile:hover .arrow svg { transform: rotate(-45deg); }
+.stretch::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+.top-right { display: flex; align-items: center; gap: 8px; }
+.socials { position: relative; z-index: 2; display: flex; gap: 6px; }
+.soc { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; color: var(--muted); transition: color .25s, border-color .25s, background .25s, transform .25s; }
+.soc svg { width: 16px; height: 16px; }
+.soc:hover, .soc:focus-visible { color: #fff; border-color: var(--spark); background: var(--deep); transform: translateY(-2px); }
 .tile h3 { margin: 0 0 6px; font: 800 34px/1 var(--display); letter-spacing: -0.03em; }
 .tile p { margin: 0; color: var(--muted); max-width: 38ch; }
 
@@ -159,13 +165,20 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-i
         </div>
       </a>
 
-      <a class="tile" href="https://techthings.cc" target="_blank" rel="noopener" style="--d:120ms">
+      <div class="tile" style="--d:120ms">
         <div class="tile-top">
           <span class="domain">techthings.cc</span>
-          <span class="arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="top-right">
+            <div class="socials">
+              <a class="soc" href="https://www.youtube.com/@TechThingscc" target="_blank" rel="noopener" aria-label="Tech Things on YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 9.2v5.6l4.8-2.8z" fill="currentColor"/></svg></a>
+              <a class="soc" href="https://www.tiktok.com/@techthingscc" target="_blank" rel="noopener" aria-label="Tech Things on TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M14 3c.4 2.6 2.2 4.4 5 4.6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></a>
+              <a class="soc" href="https://www.instagram.com/techthings.cc/" target="_blank" rel="noopener" aria-label="Tech Things on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.2" fill="currentColor"/></svg></a>
+            </div>
+            <span class="arrow" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </div>
         </div>
         <div>
-          <h3>Tech Things</h3>
+          <h3><a class="stretch" href="https://techthings.cc" target="_blank" rel="noopener">Tech Things</a></h3>
           <p>The week's top-selling tech and best deals on Amazon, ranked and updated.</p>
         </div>
         <div class="readout ranks" aria-label="Top 10 ranking preview">
@@ -174,7 +187,7 @@ footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-i
           <div class="rank"><span>#3</span><div class="bar"><i style="--w:67%;--k:2"></i></div></div>
           <div class="rank"><span>#4</span><div class="bar"><i style="--w:51%;--k:3"></i></div></div>
         </div>
-      </a>
+      </div>
     </div>
   </section>
 
